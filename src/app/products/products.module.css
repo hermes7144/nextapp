@@ -1,0 +1,11 @@
+.nav {
+  border: 1px solid red;
+}
+
+.nav a {
+  padding: 0 8px;
+}
+
+.products {
+  padding: 16px;
+}
