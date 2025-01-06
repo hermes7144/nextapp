@@ -8,6 +8,7 @@ export default function Home() {
     <>
     <h1>홈</h1>
     <Counter/>
+    <Image src='https://images.unsplash.com/photo-1441986300917-64674bd600d8' alt='shop' height={400} width={400} priority />
     </>
   )
 }

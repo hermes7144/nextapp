@@ -1,5 +1,8 @@
+import GoProductButton from '@/app/Components/GoProductButton';
 import { getProduct, getProducts } from '@/service/products';
-import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound, redirect } from 'next/navigation';
 
 type Props = {
   params: {
@@ -17,13 +20,15 @@ export default async function ProductPage({ params: {slug} }: Props) {
   const product = await getProduct(slug);
 
   if (!product) {
-    notFound();
+    redirect('/products');
   }
   
   return (
     <>
       <h1>{product.name} 제품설명페이지</h1>
-    </>
+      <Image src={`/images/${product.image}`} alt={product.name} width="300" height="300"/>
+      <GoProductButton />
+      </>
   );
 }
 
